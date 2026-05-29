@@ -5,8 +5,9 @@ AI Automation & No-Code/Low-Code Builder | Telegram Bots | n8n | AI Scraping & O
 
 📍 Berlin, Germany  
 📧 - Telegram: @Snapsum
-🔗 [LinkedIn](www.linkedin.com/in/ki-brueg-2520033bb)  
-🔗 [GitHub](https://github.com/Ki-Brueg)
+🔗 [LinkedIn](https://www.linkedin.com/in/ki-brueg-2520033bb) 
+🔗 [GitHub](https://www.github.com/Ki-Brueg)
+
 
 ## About Me
 
