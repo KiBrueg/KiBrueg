@@ -4,7 +4,8 @@ Building AI-powered automation that ships to **production** — not tutorials. P
 
 🎥 **Demo:** _2-min walkthrough — coming soon_ &nbsp;·&nbsp; 💻 **Code & docs:** [AI Automation Hub](https://github.com/KiBrueg/n8n-automation)
 
-![CI](https://github.com/KiBrueg/n8n-automation/actions/workflows/ci.yml/badge.svg)
+![CI]( <img width="640" height="429" alt="ai-automation-hub-demo" src="https://github.com/user-attachments/assets/9b43572a-f64d-4c7d-8983-c13cfe4be5de" />
+)
 
 ---
 
