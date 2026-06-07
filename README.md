@@ -2,7 +2,7 @@
 
 Building AI-powered automation that ships to **production** — not tutorials. Python · n8n · Docker · LLMs.
 
-<img src="https://github.com/user-attachments/assets/270bf26f-ed76-4cbf-bf1b-24ee9ea63ea1" width="640" alt="AI Automation Hub demo" />
+<img src="https://github.com/user-attachments/assets/270bf26f-ed76-4cbf-bf1b-24ee9ea63ea1" width="480" alt="AI Automation Hub demo" />
 
 💻 **Code & docs:** [AI Automation Hub](https://github.com/KiBrueg/n8n-automation)
 
