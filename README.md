@@ -1,4 +1,4 @@
-# Ki-Brueg
+# KiBrueg
 Personal profile README for  Ki Brueg
 
 AI Automation & No-Code/Low-Code Builder | Telegram Bots | n8n | AI Scraping & OSINT
