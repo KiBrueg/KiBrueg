@@ -1,65 +1,57 @@
-# KiBrueg
-Personal profile README for  Ki Brueg
+# AI Automation & Backend Engineer
 
-AI Automation & No-Code/Low-Code Builder | Telegram Bots | n8n | AI Scraping & OSINT
+Building AI-powered automation that ships to **production** — not tutorials. Python · n8n · Docker · LLMs.
 
-📍 Berlin, Germany  
-📧 - Telegram: [@Snapsum](https://t.me/Snapsum) 
-🔗 [LinkedIn](https://www.linkedin.com/in/ki-brueg-2520033bb) 
-🔗GitHub: [KiBrueg](https://github.com/KiBrueg)
+🎥 **Demo:** _2-min walkthrough — coming soon_ &nbsp;·&nbsp; 💻 **Code & docs:** [AI Automation Hub](https://github.com/KiBrueg/n8n-automation)
 
+![CI](https://github.com/KiBrueg/n8n-automation/actions/workflows/ci.yml/badge.svg)
 
-## About Me
+---
 
-I specialize in process automation using AI and no-code/low-code tools.  
-I build Telegram bots, n8n integrations, AI systems for data collection and analysis (scraping, OSINT), and connect external APIs and services.
+## 🚀 AI Automation Hub
 
-## Core Areas
+A modular AI-automation platform: **one engine, pluggable "modes" added by config — no code rewrite.**
+Built with hard data contracts, switchable LLM providers, and full production ops (CI/CD, backups, monitoring).
 
-- **AI Automation**  
-  - Integration of LLMs (OpenAI / OpenRouter / Perplexity / Claude, etc.) into workflows  
-  - Automated agents for search, tagging, and analysis of information  
+### 🧩 System architecture
 
-- **Telegram Bots**  
-  - Bots for notifications, payments, and integration with external services  
-  - AI assistants, job bots, scrapers inside Telegram  
+```mermaid
+flowchart LR
+    user([Channels: web / Telegram / email]) -->|HTTPS| caddy[Caddy<br/>reverse-proxy + TLS]
+    caddy --> n8n[n8n<br/>orchestration]
+    caddy --> gw[FastAPI gateway]
+    caddy --> kuma[Uptime Kuma<br/>monitoring]
+    n8n -->|/v1/process| gw
+    gw --> llm[[LLM<br/>OpenRouter / Ollama]]
+    gw --> pg[(PostgreSQL)]
+    gh[GitHub Actions<br/>CI/CD] -->|build → GHCR → SSH deploy| caddy
+```
 
-- **n8n & Automation**  
-  - Building automation workflows without code (n8n, webhooks, APIs)  
-  - Connecting Telegram, email, CRM, spreadsheets, AI models, and external APIs  
+### 🔄 Core n8n workflow
 
-- **AI Scraping & OSINT**  
-  - Collecting data from websites and APIs (from publicly available sources)  
-  - Preprocessing, cleaning, and analyzing data with AI  
-  - Searching and aggregating open sources (OSINT-style approach)
+```mermaid
+flowchart LR
+    t[Webhook trigger] --> n[Normalize → ConversationEvent]
+    n --> g[Gateway /v1/process<br/>PII sanitize → LLM → Decision]
+    g --> s{escalate?}
+    s -->|yes| h[Escalate to human]
+    s -->|no| r[Respond to channel]
+    g -. on error .-> e[Error handler / alert]
+```
 
-## Example Projects
+### ✅ What's inside
+- 🐳 Full Docker stack: **n8n · FastAPI · PostgreSQL · Caddy (auto-HTTPS)**
+- ⚙️ **Green CI** (ruff + tests) and **automated CD** — every push builds, pushes to GHCR and deploys to a live VPS
+- 💾 Daily Postgres backups · 📊 uptime monitoring · 🔒 PII sanitizer before the LLM
+- 🔌 Switchable LLM providers (OpenRouter / Ollama) and pluggable modes — **new product = new config, core untouched**
 
-- **AI Job Scraper Bot**  
-  Telegram bot that collects job postings from multiple sources, filters them by criteria, and sends curated job digests to the chat.  
-  Stack: Telegram Bot, n8n / Python, web scraping, AI-powered job description analysis.
+---
 
-- **AI Research Assistant**  
-  Automated agent that, based on a user query, collects data from open sources, structures it, and returns a concise report.  
-  Stack: n8n, LLM, HTTP API, OSINT sources.
+### 🛠️ Tech
+`Python` · `FastAPI` · `Pydantic` · `n8n` · `Docker / Compose` · `PostgreSQL` · `Caddy / HTTPS` · `GitHub Actions (CI/CD)` · `LLM APIs` · `Linux / VPS`
 
-- **Automation Hub for Telegram**  
-  A set of n8n workflows + bots for:
-  - event notifications (jobs, courses, news),
-  - integrations with spreadsheets/CRMs,
-  - simple AI assistants inside chats.
+### 🎯 Open to (remote)
+**AI Automation Engineer · Junior Backend · AI Workflow Engineer · Junior Platform / DevOps**
 
-(Later, I'll add links to specific repositories and demos.)
-
-## What I'm Looking For
-
-- Projects and teams that need an AI/automation specialist for:
-  - building Telegram bots,
-  - setting up n8n workflows,
-  - AI scraping and OSINT pipelines,
-  - integrating LLMs into existing processes.
-
-## Contact
-GitHub: [KiBrueg](https://github.com/KiBrueg)
-[LinkedIn](https://www.linkedin.com/in/ki-brueg-2520033bb) 
-Telegram: [@Snapsum](https://t.me/Snapsum) 
+### 📫 Connect
+[LinkedIn](https://www.linkedin.com/in/ki-brueg-2520033bb) · [AI Automation Hub repo](https://github.com/KiBrueg/n8n-automation)
